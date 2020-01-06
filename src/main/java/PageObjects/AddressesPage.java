@@ -13,7 +13,7 @@ public class AddressesPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"content\"]/div[3]/a/span")
+    @FindBy(xpath = "//*[contains(@class, 'addresses-footer')]/a")
     WebElement createNewAddressButton;
 
     @FindBy(id = "notifications")

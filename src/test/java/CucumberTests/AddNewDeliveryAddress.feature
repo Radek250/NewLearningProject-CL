@@ -8,8 +8,12 @@ Feature: Add new delivery Address
     And I fill the form by "<address>" "<city>" "<postcode>"
     Then I have new address added to my addresses
     Examples:
-    |email                        |password |address         |city   |postcode|
-    |michal.dobrzycki@coderslab.pl|CodersLab|ul. Wroclawska 1|Wroclaw|50-001  |
+    |email                        |password |address         |city     |postcode|
+    |michal.dobrzycki@coderslab.pl|CodersLab|ul. Wroclawska 1|Wroclaw  |50-001  |
+    |michal.dobrzycki@coderslab.pl|CodersLab|ul. Milicka 2   |Trzebnica|55-100  |
+    |michal.dobrzycki@coderslab.pl|CodersLab|ul. Obornika 91 |Trzebnica|55-100  |
+    |michal.dobrzycki@coderslab.pl|CodersLab|ul. Kaliska 19  |Krotoszyn|63-700  |
+    |michal.dobrzycki@coderslab.pl|CodersLab|ul. Trzebnicka 5|Milicz   |56-300  |
 
 
 
