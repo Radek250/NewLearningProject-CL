@@ -3,14 +3,10 @@ package PageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class NewAddressPage {
-    WebDriver driver;
-
+public class NewAddressPage extends MainPage {
     public NewAddressPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(className = "page-header")
@@ -72,15 +68,7 @@ public class NewAddressPage {
         postCodeField.click();
         postCodeField.clear();
         postCodeField.sendKeys(postcode);
-    }
 
-    public void submitNewAddressForm(){
         submitAddressButton.submit();
     }
-
-    //    Dodałem osobną metodę do submit po to żeby można było decydować czy chcę uzupełniać jedynie mandatory pola czy także
-    //            optional
-    //    Póki co stworzyłem jedynie metodę na wypełnienia mandatory pól w formularzu
-
-
 }

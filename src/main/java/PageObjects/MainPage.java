@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
-    WebDriver driver;
+    static WebDriver driver;
 
     public String currentURL;
 

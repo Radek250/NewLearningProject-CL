@@ -79,7 +79,6 @@ public class AddNewDeliveryAddressSteps {
     public void iFillTheFormBy(String arg0, String arg1, String arg2) {
         NewAddressPage newAddressPage = new NewAddressPage(this.driver);
         newAddressPage.fillOutAddNewAddressFormMandatoryFields(arg0, arg1, arg2);
-        newAddressPage.submitNewAddressForm();
     }
 
     @Then("I have new address added to my addresses")
