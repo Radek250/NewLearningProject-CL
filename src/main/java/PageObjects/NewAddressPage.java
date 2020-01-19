@@ -57,6 +57,7 @@ public class NewAddressPage extends MainPage {
 
 
     public void fillOutAddNewAddressFormMandatoryFields(String alias, String address, String city, String postcode){
+
         aliasField.click();
         aliasField.click();
         aliasField.sendKeys(alias);

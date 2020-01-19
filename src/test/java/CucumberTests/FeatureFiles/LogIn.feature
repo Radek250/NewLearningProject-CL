@@ -15,10 +15,9 @@ Feature: Log in
     And I fill log in form with "<email>" "<password>"
     Then I`m not logged in to my account
     Examples:
-      |email                  |password |
+      |email                        |password |
       |wrongEmail@coderslab.pl      |CodersLab|
       |michal.dobrzycki@coderslab.pl|coderslab|
-
 
 
   Scenario: Log in with empty login field
@@ -33,6 +32,7 @@ Feature: Log in
     When I click a sign in button on main page
     And I fill out password field in log in form "CodersLab"
     Then I am not logged into my account
+
 
   Scenario: Log in with empty login and password field
     Given I open the site https://prod-kurs.coderslab.pl in browser

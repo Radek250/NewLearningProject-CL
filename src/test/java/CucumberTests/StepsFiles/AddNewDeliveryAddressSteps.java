@@ -20,7 +20,7 @@ public class AddNewDeliveryAddressSteps {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://prod-kurs.coderslab.pl/index.php");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @When("I click log in button")
@@ -81,7 +81,6 @@ public class AddNewDeliveryAddressSteps {
     public void iFillTheFormBy(String arg0, String arg1, String arg2, String arg3) {
         NewAddressPage newAddressPage = new NewAddressPage(this.driver);
         newAddressPage.fillOutAddNewAddressFormMandatoryFields(arg0, arg1, arg2, arg3);
-
     }
 
     @Then("I have new address added to my addresses")
