@@ -33,3 +33,9 @@ Feature: Log in
     When I click a sign in button on main page
     And I fill out password field in log in form "CodersLab"
     Then I am not logged into my account
+
+  Scenario: Log in with empty login and password field
+    Given I open the site https://prod-kurs.coderslab.pl in browser
+    When I click a sign in button
+    And I submit form without filling out login and password fields
+    Then I`m not logged into my account

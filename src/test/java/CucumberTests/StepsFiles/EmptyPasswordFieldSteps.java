@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -39,6 +40,21 @@ public class EmptyPasswordFieldSteps {
     @Then("I am not logged into my account")
     public void iAmNotLoggedIntoMyAccount() {
 
+        boolean isNotLogged;
+        String expectedURL = "https://prod-kurs.coderslab.pl/index.php?controller=authentication&back=my-account";
+        String currentUrl = driver.getCurrentUrl();
+
+        System.out.println("Expected URL is: " + expectedURL);
+        System.out.println("Actual URL is: " + currentUrl);
+
+        if (expectedURL.equals(currentUrl))
+            isNotLogged = true;
+        else
+            isNotLogged = false;
+
+        Assert.assertTrue(isNotLogged);
+
+        driver.quit();
     }
 
 

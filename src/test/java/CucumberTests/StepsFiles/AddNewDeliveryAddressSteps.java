@@ -93,7 +93,6 @@ public class AddNewDeliveryAddressSteps {
         Assert.assertEquals("Address successfully added!",
                 checkAddNewAddressSuccessAlert.checkNewAddressSuccessAlert());
 
-
-      // driver.quit();
+      driver.quit();
     }
 }

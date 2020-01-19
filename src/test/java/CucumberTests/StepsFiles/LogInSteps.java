@@ -44,5 +44,21 @@ public class LogInSteps {
         LoggedUserMainPage username = new LoggedUserMainPage(this.driver);
         username.loggedUserName();
         Assert.assertEquals("Automated Tester", username.loggedUserName());
+
+        boolean isLogged;
+        String expectedURL = "https://prod-kurs.coderslab.pl/index.php?controller=my-account";
+        String currentUrl = driver.getCurrentUrl();
+
+        System.out.println("Expected URL is: " + expectedURL);
+        System.out.println("Actual URL is: " + currentUrl);
+
+        if (expectedURL.equals(currentUrl))
+            isLogged = true;
+        else
+            isLogged = false;
+
+        Assert.assertTrue(isLogged);
+
+        driver.quit();
     }
 }

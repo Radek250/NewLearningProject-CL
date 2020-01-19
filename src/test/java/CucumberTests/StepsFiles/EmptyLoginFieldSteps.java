@@ -41,8 +41,20 @@ public class EmptyLoginFieldSteps {
     @Then("I am not logged in to my account")
     public void iAmNotLoggedInToMyAccount() {
 
+        boolean isNotLogged;
+        String expectedURL = "https://prod-kurs.coderslab.pl/index.php?controller=authentication&back=my-account";
+        String currentUrl = driver.getCurrentUrl();
+
+        System.out.println("Expected URL is: " + expectedURL);
+        System.out.println("Actual URL is: " + currentUrl);
+
+        if (expectedURL.equals(currentUrl))
+            isNotLogged = true;
+        else
+            isNotLogged = false;
+
+        Assert.assertTrue(isNotLogged);
+
+        driver.quit();
     }
-
-
-
 }

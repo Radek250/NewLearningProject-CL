@@ -53,6 +53,7 @@ public class LogInPage extends MainPage {
     }
 
     public void authenticationFailedPrintText(){
-        System.out.println("You are not logged because of: " + authenticationFailedText());
+        System.out.println("You are not logged because of: " + authenticationFailedText() +
+                            " - You probably filled out login form by incorrect e-mail or password");
     }
 }
