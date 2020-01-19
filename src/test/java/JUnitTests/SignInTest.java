@@ -33,7 +33,8 @@ public class SignInTest {
         mainPage.goToSignIn();
 
         LogInPage logInPage = new LogInPage(this.driver);
-        logInPage.fillOutLogInForm(this.email, this.password);
+        logInPage.fillOutLogInField(this.email);
+        logInPage.fillOutPasswordField((this.password));
 
         LoggedUserMainPage username = new LoggedUserMainPage(this.driver);
         username.loggedUserName();

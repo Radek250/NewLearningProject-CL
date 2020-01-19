@@ -21,6 +21,9 @@ public class LogInPage extends MainPage {
     @FindBy(id = "submit-login")
     WebElement submitButton;
 
+    @FindBy(className = "help-block")
+    WebElement authenticationFailedAlert;
+
     public String checkTextLogInPageHeader(){
         return logInPageHeader.getText();
     }
@@ -29,16 +32,27 @@ public class LogInPage extends MainPage {
         System.out.println("Log in page header text is: " + checkTextLogInPageHeader() + " \n");
     }
 
-    public void fillOutLogInForm(String email, String password){
+    public void fillOutLogInField(String email){
         emailField.click();
         emailField.clear();
         emailField.sendKeys(email);
+    }
+    public void fillOutPasswordField(String password){
 
         passwordField.click();
         passwordField.clear();
         passwordField.sendKeys(password);
+    }
 
+    public void submitAForm(){
         submitButton.click();
     }
 
+    public String authenticationFailedText(){
+        return authenticationFailedAlert.getText();
+    }
+
+    public void authenticationFailedPrintText(){
+        System.out.println("You are not logged because of: " + authenticationFailedText());
+    }
 }
